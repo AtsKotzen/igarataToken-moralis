@@ -1,7 +1,7 @@
 Moralis.initialize("V3Ei4x73Py1IxX38K4BGzeqAUFTYuhVj19cZo5gD");
 Moralis.serverURL = 'https://rrdtkckeultn.moralis.io:2053/server'
-const TOKEN_CONTRACT_ADDRESS = "0xcB3D7554302CAf043e26Db70Dcb54ffD164F33d6";
-const MARKETPLACE_CONTRACT_ADDRESS = "0x319138C5B201B5edDD2368d6341312877cDC77ED";
+const TOKEN_CONTRACT_ADDRESS = "0xbD820C850Be4eB0ecb55Ca6Bb651cFbA64D9072b";
+const MARKETPLACE_CONTRACT_ADDRESS = "0x0f5E0A7c5fb2EeD3A5a64D93eaF5032D6B3C76C7";
 
 init = async () => {
     hideElement(userItemsSection);
@@ -178,7 +178,7 @@ createItem = async () => {
 
 mintNft = async (metadataUrl) => {
     const receipt = await tokenContract.methods.createItem(metadataUrl).send({from: ethereum.selectedAddress});
-    console.log(receipt);
+    console.log("Receipt: ", receipt);
     return receipt.events.Transfer.returnValues.tokenId;
 }
 
